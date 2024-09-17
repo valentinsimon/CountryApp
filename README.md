@@ -1,4 +1,6 @@
-CountryApp
+# CountryApp
+
+# Init && Front
 1. Clone Repository 
 
 git clone https://github.com/{youruser}/countryapp.git
