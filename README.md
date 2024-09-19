@@ -4,17 +4,17 @@
 1. Clone Repository 
 
 git clone https://github.com/{youruser}/countryapp.git
-cd countryapp
+cd countryapp.
 
 2. Install modules
-npm install
+npm install.
 
 3. Configure enviroment variables
 Create a .env file in the FRONT root and define the following variables:
 
-NEXT_PUBLIC_API_BASE_URL=http://localhost:3000
+NEXT_PUBLIC_API_BASE_URL=http://localhost:3000.
 
-Make sure to replace http://localhost:3000 with the URL where the backend will run. Or use PORT 3000
+Make sure to replace http://localhost:3000 with the URL where the backend will run. Or use PORT 3000.
 
 4. To start the development server, use the following command;
 npm run dev   ==>> In COUNTRYAPP/FRONT/country-app/package.json
@@ -27,7 +27,7 @@ This will start the server at http://localhost:3001 by default. (PORT 3000 IS BE
 2. npm install
 3. run server
 npm run start:dev
-This will start the server at http://localhost:3000 by default
+This will start the server at http://localhost:3000 by default.
 
 Parallel Execution
 Frontend: http://localhost:3001
