@@ -7,8 +7,8 @@ import styled from 'styled-components';
 import { CountryInfo } from '../../types';
 
 
-
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Legend);
+
 
 const Container = styled.div`
   background-color: #000;
@@ -27,7 +27,7 @@ const Title = styled.h1`
 
 const Subtitle = styled.h2`
   text-align: center;
-  margin-bottom: 30px; /* Ajuste para aumentar la distancia entre el título y los botones */
+  margin-bottom: 50px; /* separar content */
   font-size: 1.5em;
   font-weight: bold;
 `;
@@ -87,12 +87,23 @@ const ButtonContainer = styled.div`
   gap: 1em;
 `;
 
+const Spacer = styled.div`
+  margin-bottom: 50px; /* espacio nec */
+`;
+
+const ChartContainer = styled.div`
+  width: 80%; /* anncho cont */
+  max-width: 800px; /* ajustar ancho max */
+  margin: 0 auto; /* cent graphic */
+  height: 400px; /* ajustar altura cont */
+`;
+
+
 const CountryInfoPage = () => {
   const router = useRouter();
   const { countryCode } = router.query;
   const [countryInfo, setCountryInfo] = useState<CountryInfo | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [country, setName] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchCountryInfo = async () => {
@@ -137,6 +148,7 @@ const CountryInfoPage = () => {
       <BackButton href="/">Back</BackButton>
       <Title>{countryCode}</Title>
       <FlagImage src={countryInfo.flagUrl} alt={`${countryInfo.countryName} Flag`} />
+      <Spacer />
       <Subtitle>Border Countries</Subtitle>
       <ButtonContainer>
         {countryInfo.borderCountries.map((border) => (
@@ -145,10 +157,11 @@ const CountryInfoPage = () => {
           </BorderButton>
         ))}
       </ButtonContainer>
+      <Spacer /> 
       <Subtitle>Population Over Time</Subtitle>
-      <div style={{ marginTop: '20px' }}>
+      <ChartContainer>
         <Line data={chartData} />
-      </div>
+      </ChartContainer>
     </Container>
   );
 };

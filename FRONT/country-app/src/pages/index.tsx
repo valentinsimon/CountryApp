@@ -35,7 +35,7 @@ const HomePage = () => {
 
 export default HomePage;
 
-// Styled Components
+
 const PageContainer = styled.div`
   background-color: black;
   color: white;

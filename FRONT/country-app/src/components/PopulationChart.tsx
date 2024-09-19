@@ -55,7 +55,11 @@ const PopulationChart = ({ populationData }: PopulationChartProps) => {
     },
   };
 
-  return <Line data={data} options={options} />;
+  return (
+    <div style={{ width: '60%', height: '300px' }}>
+      <Line data={data} options={options} />
+    </div>
+  );
 };
 
 export default PopulationChart;
